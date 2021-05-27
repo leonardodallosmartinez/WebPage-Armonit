@@ -1,11 +1,32 @@
-<div >
-    <h1 id="titulo_1">hola mother fucker</h1>
-</div>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <nombre>carlos</nombre><apellido>Dallos Reyeess</apellido><edad>298l</edad>
+<head>
+    
+    
+</head>
+<body>
+    <div >
+        <h1 id="titulo_1">hola mother fucker</h1>
+        <h1 id="titulo_2">hola mother fucker 22</h1>
+    </div>   
 
-
-<script src="test.js"></script>
-
+</body>
 
 </html>
+<script src="test.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>//Jquery
+    $(function(){
+        var a=$("#titulo_2");
+        a.html("titulo 2 cambiado con Jquery");
+        a.on({
+            mouseenter: function(){
+                $(this).css({"color":"red", "font-size":"4em"})
+            },
+            mouseleave: function(){
+                $(this).css({"color": "blue", "font-size":"2rem"})
+            }
+        })        
+    });
+    </script>

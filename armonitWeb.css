@@ -33,6 +33,7 @@ body{
     background-color:rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
+
 .carousel-caption:hover{
     background-color:rgba(95, 95, 110, 0.6);
     font-size: 1.5rem;
@@ -42,6 +43,10 @@ body{
 }
 .carousel-caption>p{
     font-weight: 600;
+}
+.carousel-caption> h5,p{
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .carousel-item{
     height: 32rem;
@@ -64,10 +69,6 @@ body{
 .carac-im>img{
     width: 800px;
     height: 500px;
-}
-.carac-im::before {
-    border: none;
-    box-shadow: 0 0 10px black inset;
 }
 .ca_imagen{    
     width: 800px;
