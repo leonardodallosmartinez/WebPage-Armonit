@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="">Home</a>
+                            <a class="nav-link active" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">Urbanismo</a>
@@ -61,8 +61,13 @@
                                 <li><a class="dropdown-item" href="#">Item 3</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="">Contacto</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Consultar contacto empresa</a></li>
+                                <li><a class="dropdown-item" href="inscribir_cliente.php">Inscribir cliente</a></li>
+                                <li><a class="dropdown-item" href="consultar_cliente.php">Consultar cliente</a></li>
+                            </ul>
                         </li>                       
                     </ul>
                     <!--form search-->
@@ -206,7 +211,6 @@
     
 </body>
 </html>
-
 
 <!--JS propios-->
 <script src="armonitWeb.js"></script>
