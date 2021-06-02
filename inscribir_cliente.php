@@ -14,14 +14,6 @@
     <!--JQuery 3.6.0-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
 
-    <style>
-        .formulario{
-            color: rgb(0,0,0);
-        }
-        #nombre{
-            color: black;
-        }
-    </style>
 </head>
 <body class="bg-light">
 <!--formulario validado con bootstrap-->
@@ -47,7 +39,7 @@
                             <label for="usernameCliente" class="form-label">Nombre de usuario<span class="text-muted">(Opcional)</span></label>
                             <div class="input-group has-validation">
                                 <div class="input-group-text">@</div>
-                                <input type="text" name="correoCliente" id="usernameCliente" class="form-control" placeholder="Ingrese su nombre de usuario">
+                                <input type="text" name="usernameCliente" id="usernameCliente" class="form-control" placeholder="Ingrese su nombre de usuario">
                                 <div class="invalid-feedback">Por favor ingrese un nombre para su usuario</div>
                             </div>
                         </div>
