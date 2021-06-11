@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "..\\Practicas HTML"
+		},
+		{
+			"path": "..\\ejemplo_conexion_mongo"
 		}
 	],
 	"settings": {
