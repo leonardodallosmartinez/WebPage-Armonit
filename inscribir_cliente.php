@@ -35,7 +35,16 @@
                             <input type="text" name="apellidoCliente" id="apellidoCliente" class="form-control" placeholder="Ingrese su apellido" value="" required>
                             <div class="invalid-feedback">Es necesario ingresar un apellido</div>
                         </div>
-         <!--username--><div class="col-12">
+              <!--DNI--><div class="col-6">
+                            <label for="DNICliente" class="form-label">DNI</label>
+                            <div class="input-group has-validation">
+                                <div class="input-group-text">CC</div>
+                                <input type="number" name="DNICliente" id="DNICliente" class="form-control" placeholder="######" required>
+                                <div class="invalid-feedback">Ingrese un un numero de DNI valido</div>
+                            </div>
+                        </div>
+
+         <!--username--><div class="col-6">
                             <label for="usernameCliente" class="form-label">Nombre de usuario<span class="text-muted">(Opcional)</span></label>
                             <div class="input-group has-validation">
                                 <div class="input-group-text">@</div>
@@ -76,8 +85,8 @@
                         </div>
                         
          <!--address1--><div class="col-12">
-                            <label for="direccion1Cliente" class="form-label">Dirección de envío</label>
-                            <input type="text" class="form-control" id="direccion1Cliente" name="direccion1Cliente" placeholder="Ingrese una direccion de residencia" required>
+                            <label for="direccionCliente" class="form-label">Dirección de envío</label>
+                            <input type="text" class="form-control" id="direccionCliente" name="direccionCliente" placeholder="Ingrese una direccion de residencia" required>
                             <div class="invalid-feedback">Por favor ingrese una dirección de envio</div>
                         </div>
          <!--address2--><div class="col-12">
@@ -87,9 +96,14 @@
                         </div>
                     </div>
                     <hr class="my-4"> 
-    <!--checkbox--><div class="form-check">
+    <!--checkbox1--><div class="form-check">
+                    <input type="checkbox" name="checkClienteEdad" id="checkClienteEdad" class="form-check-input" required>
+                        <label for="checkCliente" class="form-check-label">Soy mayor de edad</label>
+                        <div class="invalid-feedback">Por favor marque esta casilla de verificación para continuar</div>                        
+                    </div>
+    <!--checkbox2--><div class="form-check">
                         <input type="checkbox" name="checkCliente" id="checkCliente" class="form-check-input" required>
-                        <label for="checkCliente" class="form-check-label">De acuerdo en que guardemos sus datos</label>
+                        <label for="checkCliente2" class="form-check-label">De acuerdo en que guardemos sus datos</label>
                         <div class="invalid-feedback">Por favor marque esta casilla de verificación para continuar</div>                        
                     </div>
                     <hr class="my-4"> 

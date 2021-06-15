@@ -9,9 +9,11 @@ $clientes_DB = (new MongoDB\Client)->armonit->clientes;
 $empleados_DB = (new MongoDB\Client)->armonit->empleados;
 $productos_DB = (new MongoDB\Client)->armonit->productos;
 
-/*$document = $clientes_DB->findOne(['nombre' => 'Angela']);
+$document = $clientes_DB->find();
 
-var_export($document);//var_dump//print_r()
+//echo gettype($document), "<br>";
+
+/*var_export($document);//var_dump//print_r()
 echo "<br><br>";
 echo $document['nombre'], " ",$document['apellido'] ;*/
 ?>
