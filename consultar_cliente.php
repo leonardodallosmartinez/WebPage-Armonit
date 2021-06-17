@@ -7,8 +7,31 @@
     <title>Consultar clientes</title>
     <!--CSS bootstrap5-->    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--JQuery 3.6.0-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
 </head>
 <body class="bg-light">
+<!--alerta Verificacion de edicion realizada-->
+<?php
+    if(isset($_GET["edit"])=="si"){
+        echo '<script>
+        $(function(){
+           alert("Los datos has sido correctamente actualizados."); 
+        });
+    </script>';
+    }
+    ?>
+    <!--alerta Verificacion de datos eliminados-->
+    <?php
+    if(isset($_GET["elimin"])=="si"){
+        echo '<script>
+        $(function(){
+           alert("Los datos han sido eliminados correctamente."); 
+        });
+    </script>';
+    }
+    ?>
+
     <!--Tablas para consulas-->
     <div class="container-md">
         <div class="row g-2">
@@ -28,6 +51,9 @@
                                <th>Ciudad</th>
                                <th>Dirección</th>
                                <th>Direccion 2</th>
+                               <th>Fecha de creación</th>
+                               <th>-Editar-</th>
+                               <th>-Eliminar-</th>
                            </tr> 
                         </thead>
                         <tbody>
@@ -59,7 +85,12 @@
                                     echo '<td class="text-center">-</td>';
                                 }//en if direccion_2
                                 ?>
+                                <td><?php echo $indice['dateCreacion'] ?></td>
+                                <form action="inscribir_cliente.php" method="post">
                                 
+                                <td><input class="visually-hidden" type="text" name="_idCliente" id="_idCliente" value="<?php echo $indice['_id'];?>"><button type="submit" class="btn btn-warning btn-sm editButton">Editar</button></td>  
+                                <td><button type="submit" formaction="up_db_eliminarCliente.php?id=<?php echo $indice['_id']; ?>" class="btn btn-danger btn-sm eliminButton" type="reset">Eliminar</button></td>
+                                </form>                                
                             </tr>
                         <?php
                         }// end foreach
@@ -75,3 +106,5 @@
     </div> 
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
+<!--<script src="consultas.js"></script>-->

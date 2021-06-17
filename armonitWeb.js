@@ -10,6 +10,5 @@ $(function(){
         }
         
     });
-
     console.log("ejecucion de JS 100%");
 });       

@@ -12,5 +12,14 @@ $(function () {
           }
           form.classList.add('was-validated')
         }, false)
-      })
-  })()
+      });
+      
+    //$(".hdate").val(hoy.toLocaleDateString() + " - " + hoy.getHours() +  ":" + hoy.getMinutes() + ":" + hoy.getSeconds()); 
+    //$(".hdate").val(hoy.get);
+    
+    $("form").on("submit", function(){
+      let hoy = new Date();
+      $(".hdate").val(hoy.toLocaleDateString() + " - " + hoy.getHours() +  ":" + hoy.getMinutes() + ":" + hoy.getSeconds());
+    });
+  });
+

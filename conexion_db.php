@@ -2,7 +2,7 @@
 
 if((require_once __DIR__ . '/vendor/autoload.php'))
 {
-    echo "Conexion realizada con exito","<br><br>";
+    echo "Conexion a db realizada con exito","<br><br>";
 }
 
 $clientes_DB = (new MongoDB\Client)->armonit->clientes;

@@ -17,13 +17,59 @@
 </head>
 <body class="bg-light">
 <!--formulario validado con bootstrap-->
-<header></header>
+<header>
+<!--alerta Verificacion de datos asignados-->
+<?php
+    if(isset($_GET["datos"])=="no"){
+        echo '<script>
+        $(function(){
+           alert("Los datos No se han subido correctamente, por favor intente de nuevo."); 
+        });
+    </script>';
+    }    
+    extract($_POST);
+    if(isset($_idCliente)){
+        require_once 'conexion_db.php';//conexion para recibir los datos a editar
+        $doc = $clientes_DB->findOne(['_id' => new MongoDB\BSON\ObjectID($_idCliente)]);
+        $name = $doc["nombre"];
+?>
+        <script>
+        $(function(){    
+            $("#nombreCliente").val("<?php echo $doc['nombre'];?>");
+            $("#apellidoCliente").val("<?php echo $doc["apellido"];?>");
+            $("#DNICliente").val("<?php echo $doc["DNI"];?>");
+            $("#correoCliente").val("<?php echo $doc["correo"];?>");
+            $("#paisCliente").val("<?php echo $doc["pais"];?>");
+            $("#deptoCliente").val("<?php echo $doc["depto"];?>");
+            $("#ciudadCliente").val("<?php echo $doc["ciudad"];?>");
+            $("#direccionCliente").val("<?php echo $doc["direccion_1"];?>");                  
+            
+            console.log("script para editar datos 100% ejecutado");    
+        });
+        </script>
+        <?php
+        if(isset($doc["direccion_2"])){
+        ?>
+        <script>$("#direccion2Cliente").val("<?php echo $doc["direccion_2"];?>");</script>            
+        <?php
+        }        
+    }
+        ?>
+</header>
 <main>
     <div class="container">
         <div class="row g-5">
             <div class="col-md-10 col-lg-11">
                 <h4 class="d-flex mb-3">Formulario - Datos cliente</h4>
-                <form action="up_db_inscribir_cliente.php" method="post" class="needs-validation" novalidate>
+
+                <?php //php condicional para saber si el formulario envia a pag de inscribir o a editar
+                if(isset($_idCliente)){ ?>
+                    <form action="up_db_editarCliente.php?id=<?php echo $_idCliente?>" method="post" class="needs-validation" novalidate>
+                <?php }else{?>
+                    <form action="up_db_inscribir_cliente.php" method="post" class="needs-validation" novalidate>
+                <?php }
+                ?>
+                
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="nombreCliente" class="form-label">Nombres</label>
@@ -94,6 +140,11 @@
                             <input type="text" class="form-control" id="direccion2Cliente" name="direccion2Cliente" placeholder="Ingrese una direccion de residencia">
                             <div class="invalid-feedback">Por favor ingrese una dirección de envio secundaria</div>
                         </div>
+      <!--hidden date--><div class="col-4 visually-hidden">
+                            <label for="dateCliente" class="form-label">Fecha de creación</label>
+                            <input type="text" class="form-control hdate" id="dateCliente" name="dateCliente" value="12/12/1992">
+                            <div class="invalid-feedback">Por favor ingrese una dirección de envio secundaria</div>
+                        </div>
                     </div>
                     <hr class="my-4"> 
     <!--checkbox1--><div class="form-check">
@@ -103,12 +154,13 @@
                     </div>
     <!--checkbox2--><div class="form-check">
                         <input type="checkbox" name="checkCliente" id="checkCliente" class="form-check-input" required>
-                        <label for="checkCliente2" class="form-check-label">De acuerdo en que guardemos sus datos</label>
+                        <label for="checkCliente2" class="form-check-label">Estoy dee acuerdo en que guarden mis datos</label>
                         <div class="invalid-feedback">Por favor marque esta casilla de verificación para continuar</div>                        
                     </div>
                     <hr class="my-4"> 
                     <button class="btn btn-outline-primary btn-sm" type="submit">Enviar</button>
-                    <button class="btn btn-outline-danger btn-sm" type="reset">Limpiar</button>                         
+                    <button class="btn btn-outline-danger btn-sm" type="reset">Limpiar</button>
+                    <button class="btn btn-info btn-sm" onclick="window.location.assign('armonitWeb.php')">Home</button>                         
                 </form>
             </div>
         </div>
@@ -119,14 +171,9 @@
         <p class="float-end"><a href="#">Back to top</a></p>
         <p>&copy Armonit Diseño-Colombia. &middot;<a href="#"> Privacy</a> &middot;<a href="#"> Terms</a></p>        
 </footer>
-
-
-
-
-
-
 </body>
 </html>
 
 <!--validacion usando JS para bootstrap-->
 <script src="inscribir_cliente.js"></script>
+
