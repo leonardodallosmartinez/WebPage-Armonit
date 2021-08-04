@@ -7,10 +7,23 @@
     <title>Consultar clientes</title>
     <!--CSS bootstrap5-->    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!--bootstrap5 con poppoer.js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <!--JQuery 3.6.0-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
+    <style>
+        footer{
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body class="bg-light">
+<!--Encabezado--> 
+<?php
+include_once 'encabezado.php';
+makeHeader(); 
+?>
 <!--alerta Verificacion de edicion realizada-->
 <?php
     if(isset($_GET["edit"])=="si"){
@@ -33,10 +46,10 @@
     ?>
 
     <!--Tablas para consulas-->
-    <div class="container-md">
+    <div class="container-md mt-3">
         <div class="row g-2">
             <div class="col-md">
-                <h3 class="d-flex mb-3 justify-content-center">Consultas - Clientes</h3>
+                <h4 class="d-flex mb-3 justify-content-cente"><b>Consultas - Clientes</b></h4>
                 <div class="table-responsive">
                     <table class="table align-middle table-light table-hover table-bordered table-sm">
                         <thead class="table-dark">
@@ -103,7 +116,11 @@
                 ?>
             </div>
         </div>
-    </div> 
+    </div>
+    <footer class="container mt-5">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy Armonit Diseño-Colombia. &middot;<a href="#"> Privacy</a> &middot;<a href="#"> Terms</a></p>        
+    </footer> 
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    

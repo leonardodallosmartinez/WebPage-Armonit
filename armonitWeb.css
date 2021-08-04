@@ -75,6 +75,10 @@ body{
     width: 100%;
     filter:drop-shadow(-8px -8px 10px gray);
 }
+footer{
+    position: absolute;
+    bottom: 0;
+}
 
 
 /* responsive*/

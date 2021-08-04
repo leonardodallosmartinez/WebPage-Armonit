@@ -16,6 +16,10 @@
 
 </head>
 <body class="bg-light">
+<?php
+include_once 'encabezado.php';
+makeHeader();
+?>
 <!--formulario validado con bootstrap-->
 <header>
 <!--alerta Verificacion de datos asignados-->
@@ -57,11 +61,11 @@
         ?>
 </header>
 <main>
-    <div class="container">
+    <div class="container mt-3">
         <div class="row g-5">
             <div class="col-md-10 col-lg-11">
-                <h4 class="d-flex mb-3">Formulario - Datos cliente</h4>
-
+                <h4 class="d-flex mb-3"><b>Formulario - Inscripción cliente</b></h4>
+                <hr class="my-4">
                 <?php //php condicional para saber si el formulario envia a pag de inscribir o a editar
                 if(isset($_idCliente)){ ?>
                     <form action="up_db_editarCliente.php?id=<?php echo $_idCliente?>" method="post" class="needs-validation" novalidate>
