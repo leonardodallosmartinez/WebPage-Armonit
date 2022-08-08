@@ -1,0 +1,6 @@
+.container{
+    max-width: 960px;    
+}
+input[type="number"]{
+    -webkit-appearance: textfield !important;    
+}

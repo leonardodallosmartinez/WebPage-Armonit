@@ -5,9 +5,12 @@
 		},
 		{
 			"path": "..\\Practicas HTML"
+		},
+		{
+			"path": "..\\ejemplo_conexion_mongo"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Pagina_prueba"
+		"liveServer.settings.multiRootWorkspaceName": "Pagina_prueba_armonit"
 	}
 }
